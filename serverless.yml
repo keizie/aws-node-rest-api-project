@@ -1,0 +1,22 @@
+org: keizie
+app: aws-node-rest-api-project
+service: aws-node-rest-api-project
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
